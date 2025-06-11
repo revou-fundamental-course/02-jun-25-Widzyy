@@ -28,33 +28,98 @@
     <main>
         <!-- Home Section -->
         <section id="home">
-            <h1>Hi User, Welcome To Widley College</h1>
-            <p>Widley University adalah institusi pendidikan
-                tinggi yang berfokus pada pengembangan
-                akademik, profesional, dan karakter mahasiswa
-                melalui pendekatan pembelajaran yang inovatif
-                dan kolaboratif.</p>
+            <div class="text-container fade-slide">
+                <h1>Hi, <span id="user-name">User</span> 👋</h1>
+                <p>Welcome To Widley University!</p>
+            </div>
+
+            <div class="slider fade-slide">
+                <button class="nav left" onclick="prevSlide()">❮</button>
+                <div class="image-wrapper">
+                    <img src="../assets/Bangunan.jpeg" class="slide active" alt="Slide 1">
+                    <img src="../assets/kelas.jpeg" class="slide" alt="Slide 2">
+                    <img src="../assets/mahasiswa.jpeg" class="slide" alt="Slide 3">
+                </div>
+                <button class="nav right" onclick="nextSlide()">❯</button>
+            </div>
+        </section>
 
             <!-- Banner Section -->
-            <div class="banner-img"></div>
+            <!-- <div class="banner-img"></div> -->
         </section>
 
         <hr />
 
         <!-- Our Profile Section -->
         <section id="our-profile">
-            <h1>Our Profile</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <div class="profile-container">
+                <h2 class="fade-in">Our Profile</h2>
+                <p class="description fade-in">
+                    Widley University adalah institusi pendidikan
+                    tinggi yang berfokus pada pengembangan
+                    akademik, profesional, dan karakter mahasiswa
+                    melalui pendekatan pembelajaran yang inovatif
+                    dan kolaboratif
+                </p>
+
+                <div class="facts">
+                    <div class="fact-box fade-in">
+                        <h3>2018</h3>
+                        <p>Tahun Berdiri</p>
+                    </div>
+                    <div class="fact-box fade-in">
+                        <h3>15+</h3>
+                        <p>Anggota Tim</p>
+                    </div>
+                    <div class="fact-box fade-in">
+                        <h3>100+</h3>
+                        <p>Proyek Selesai</p>
+                    </div>
+                </div>
+
+                <div class="image-container fade-in">
+                    <img src="https://picsum.photos/200" alt="Foto Tim Kami" />
+                </div>
+
+                <div class="cta fade-in">
+                    <a href="#contact">Hubungi Kami</a>
+                </div>
+            </div>
         </section>
         
         <hr />
 
         <!-- Message Us Section -->
         <section id="message-us">
-            <h1>Message Us</h1>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>Message Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" required>
+                </div>
 
-            <form></form>
+                <div class="form-group">
+                    <label for="dob">Tanggal Lahir:</label>
+                    <input type="date" id="dob" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="Laki-laki" required> Laki-laki</label>
+                        <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <div id="output"></div>
         </section>
     </main>
 
@@ -80,5 +145,6 @@
         </div>
         
     </footer>
+    <script src="js\script.js"></script>
 </body>
 </html>
