@@ -7,6 +7,20 @@
   padding: 16px 24px;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; 
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+body {
+  padding-top: 60px;
+}
+
 .header-wrapper > .menu {
   display: flex;
 }
@@ -21,6 +35,7 @@
   padding: 8px 16px;
   border: 1px solid rgb(0, 0, 0);
   cursor: pointer;
+  margin-top: 10px;
   transition: 0.3s background-color ease-out;
 }
 
@@ -220,7 +235,7 @@ h2 {
   background: #0056b3;
 }
 
-/* Fade-in animation */
+/* Fade-in animation (Our Profile Section) */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -234,10 +249,28 @@ h2 {
 
 /* Message Us Section */
 #message-us {
-  font-family: Arial, sans-serif;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form-container,
+.output-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+h2, h3 {
+  color: #333;
 }
 
 .form-group {
@@ -275,6 +308,13 @@ button:hover {
   background-color: darkblue;
 }
 
+.output-container {
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #cce;
+}
+
 
 /* Footer Component */
 .main-footer {
@@ -304,7 +344,6 @@ button:hover {
   color: #ccc;
 }
 
-
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
@@ -313,18 +352,4 @@ button:hover {
   color: #999;
 }
 
-/* Responsive
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-} */
 

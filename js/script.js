@@ -1,8 +1,7 @@
-console.log("Javascript Is Running")
-
 // Home Setting
 let currentIndex = 0;
 
+// Show Slide
 function showSlide(index) {
   const slides = document.querySelectorAll('.slide');
   if (index >= slides.length) currentIndex = 0;
@@ -14,15 +13,31 @@ function showSlide(index) {
   });
 }
 
+// Next Slide 
 function nextSlide() {
   currentIndex++;
   showSlide(currentIndex);
 }
 
+// Previous Slide 
 function prevSlide() {
   currentIndex--;
   showSlide(currentIndex);
 }
+
+// Auto Slide
+let autoSlideInterval = setInterval(nextSlide, 4000);
+
+// Pause auto slide ketika user hover tombol navigasi
+document.addEventListener("DOMContentLoaded", () => {
+  const navButtons = document.querySelectorAll(".nav");
+  navButtons.forEach(btn => {
+    btn.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+    btn.addEventListener("mouseleave", () => {
+      autoSlideInterval = setInterval(nextSlide, 4000);
+    });
+  });
+});
 
 // Animasi saat scroll
 window.addEventListener("scroll", () => {
@@ -41,7 +56,7 @@ window.onload = () => {
 };
 
 
-// Animasi saat scroll - 
+// Animasi saat scroll - Our Profile
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".fade-in");
 
@@ -59,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Form Validation Function
+// Form Submition Function - Start
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -70,15 +85,18 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
   const output = `
     <h3>Pesan Terkirim:</h3>
+    <br>
     <p><strong>Nama:</strong> ${name}</p>
+    <br>
     <p><strong>Tanggal Lahir:</strong> ${dob}</p>
+    <br>
     <p><strong>Jenis Kelamin:</strong> ${gender}</p>
+    <br>
     <p><strong>Pesan:</strong> ${message}</p>
-    <hr>
+    
   `;
 
   document.getElementById("output").innerHTML = output;
   document.getElementById("contactForm").reset();
 });
-
-
+// Form Submition Function - End
