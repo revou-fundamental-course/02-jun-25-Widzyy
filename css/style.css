@@ -57,11 +57,6 @@ body {
   border-radius: 50%;
 }
 
-@media only screen and (max-width: 600px) {
-  .header-wrapper {
-    flex-direction: column;
-  }}
-
 
 /* Home Section */
 * {
@@ -111,7 +106,7 @@ body {
 }
 
 .image-wrapper {
-  display: flexbox;
+  display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -247,6 +242,7 @@ h2 {
   transform: translateY(0);
 }
 
+
 /* Message Us Section */
 #message-us {
   max-width: 1000px;
@@ -352,4 +348,7 @@ button:hover {
   color: #999;
 }
 
-
+@media only screen and (max-width: 600px) {
+  .header-wrapper {
+    flex-direction: column;
+  }}
