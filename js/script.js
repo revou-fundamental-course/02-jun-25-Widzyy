@@ -41,6 +41,22 @@ window.onload = () => {
 };
 
 
+// Animasi saat scroll - 
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".fade-in");
+
+  const onScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("visible");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+});
 
 
 // Form Validation Function
@@ -65,20 +81,4 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   document.getElementById("contactForm").reset();
 });
 
-// Animasi saat scroll
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".fade-in");
-
-  const onScroll = () => {
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add("visible");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", onScroll);
-  onScroll(); // Jalankan saat load juga
-});
 
