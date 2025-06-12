@@ -1,3 +1,22 @@
+// Login User 
+document.addEventListener('DOMContentLoaded', (event) => {
+  function setUserName() {
+    let userName = prompt("Please enter your name:"); 
+      if (userName !== null && userName.trim() !== '') {
+        document.getElementById('user-name').textContent = userName;
+        localStorage.setItem('widleyUserName', userName);
+      } else {
+        console.log("User did not enter a name. Keeping default 'user'.");
+      }
+}
+      const storedUserName = localStorage.getItem('widleyUserName');
+      if (storedUserName) {
+        document.getElementById('user-name').textContent = storedUserName;
+      } else {
+        setUserName();
+      }
+});
+
 // Home Setting
 let currentIndex = 0;
 
